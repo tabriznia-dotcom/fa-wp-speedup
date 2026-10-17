@@ -1,5 +1,69 @@
 # شتاب وردپرس — FA WP Speedup
 
+[English](#english) · [فارسی](#فارسی)
+
+## English
+
+FA WP Speedup is a modular WordPress performance plugin designed for Persian and RTL sites, WooCommerce stores, and unreliable access to external services from Iran. Version **0.2.0 is a beta release**. It provides local diagnostics, approved CDN localization, non-destructive image derivatives, and page-specific asset controls. All optimization options are disabled by default and can be enabled independently.
+
+### Features
+
+- **Local diagnostics:** inspect registered and rendered external resources during administrator visits, request timings, database query counts, external HTTP activity, cache status, autoloaded options, WP-Cron, and Action Scheduler. Diagnostics are bounded and stored locally. Server processing time is not the same as browser TTFB; detailed query timing depends on existing `SAVEQUERIES` instrumentation.
+- **Approved CDN localization:** download and serve the exact supported Bootstrap 5.3.3 CSS and JavaScript bundle from jsDelivr after administrator approval. Downloads run through WP-Cron and validate HTTPS, MIME type, size, and official SHA-384 integrity hashes. Download approval and activation are separate steps. Missing or corrupt local files fall back to the original URL.
+- **Image optimization:** generate separate WebP and AVIF derivatives of eligible local JPEG and static PNG images when the server supports the codec. Original files and WordPress attachment metadata are preserved. Generation runs in small background batches; smaller, verified WebP files can be activated per image. **AVIF is preview-only in this release.**
+- **Responsive images and auditing:** preserve WordPress `srcset` widths, optionally fill missing image dimensions, and optionally prioritize the first recognized featured image on a singular page. An administrator-only browser audit reports oversized images using rendered dimensions and device pixel ratio. Featured-image priority is not automatic LCP detection.
+- **Advanced asset controls:** create exact-handle rules for supported page contexts to unload eligible independent assets or use WordPress's native `defer` strategy. Start with a nonce-protected administrator preview. Public activation requires manual confirmation of baseline measurements and preview checks. Core, dependent, localized, inline-associated, and sensitive resources are protected.
+- **Dashboard options:** optionally hide the WordPress news widget and set Heartbeat to 60 seconds on the administrator dashboard. The editor and post-locking behavior are preserved. Emoji loader removal is available on eligible public pages.
+
+The plugin does not add a page-cache layer, clean the database, modify orders, combine assets, or provide arbitrary delayed script execution. Known optimizer conflicts block overlapping public optimizations. Detection does not establish compatibility with every third-party version.
+
+### Requirements and tested environment
+
+| Component | Requirement / scope | Tested version |
+| --- | --- | --- |
+| WordPress | 6.5 or later | 6.9 |
+| PHP | 8.1 or later; use a currently supported PHP release in production | 8.1.34 |
+| WooCommerce | Optional; 9.x is the initial compatibility target | 9.9.5 |
+| Image codecs | WordPress image editor support is required for each output format | WebP and AVIF conversion exercised |
+| Multisite | Network activation is blocked; network-wide lifecycle support is not implemented | Not validated |
+
+Minimum versions and the full compatibility matrix have not been tested. Composer, Node.js, and external CDNs are not runtime dependencies of the plugin itself. Background downloads and image generation require working WP-Cron or a host-managed cron runner.
+
+### Download and installation
+
+1. Download the [installable v0.2.0 ZIP](https://github.com/tabriznia-dotcom/fa-wp-speedup/releases/download/v0.2.0/fa-wp-speedup-0.2.0.zip) from [GitHub Releases](https://github.com/tabriznia-dotcom/fa-wp-speedup/releases).
+2. In WordPress, open **Plugins → Add New → Upload Plugin**, select the ZIP without extracting it, and activate the plugin. Alternatively, extract the complete `fa-wp-speedup` directory into `wp-content/plugins/`.
+3. Open **Settings → شتاب وردپرس**. The current administrator interface uses Persian text with translation-ready strings and RTL support.
+4. Enable diagnostics first and visit representative pages as an administrator. Record a baseline before enabling an optimization.
+5. Approve supported CDN downloads or image generation, inspect the resulting files, then activate each approved resource and its corresponding global switch. For asset rules, test administrator preview before enabling public mode.
+6. Purge existing HTML caches with your current cache plugin or hosting tools, then verify public pages in a fresh guest session and complete a staging checkout.
+
+### Safety, privacy, and supported scope
+
+CDN localization currently supports only the exact Bootstrap 5.3.3 jsDelivr CSS and bundle URLs, with either no query string or the supported `?ver=5.3.3` parameter. Unknown scripts, fonts, RTL variants, dynamic URLs, and CSS containing external imports or asset URLs are not automatically localized. Hardcoded HTML resources are reported rather than rewritten.
+
+Public optimizations exclude sensitive requests, including cart, checkout, account, authenticated users, AJAX/REST, and recognized WooCommerce sessions. Additional query-string and resource guards apply. Custom theme galleries, CSS background images, payment integrations, CAPTCHA, and security scripts are not guessed or rewritten. Approved image changes use WordPress image APIs and supported WooCommerce variation data; original zoom images remain available.
+
+There is no telemetry service. Reports remain on the site and do not store request bodies, cookies, SQL text, or customer/order content. Approved CDN downloads contact the selected CDN, which necessarily receives the server's IP address and HTTP request metadata. The image audit sends bounded measurements to the same site only.
+
+### Rollback and cleanup
+
+Disable the relevant global switch to stop an optimization, or revert an individual CDN resource or image to its original URL. Advanced rules provide immediate disable and previous-settings restoration. Generated files are retained when serving is disabled; explicit deletion removes only plugin-owned cached files or derivatives. Original media is preserved. Deactivation unschedules plugin jobs; uninstall cleanup requires the administrator's prior opt-in.
+
+Purge existing page/CDN caches before deleting generated files, retiring image generations, or uninstalling. Previously cached HTML may still reference old files. The image module retains the current and previous successfully activated generations; file deletion cannot be undone by restoring settings.
+
+### Validation and limitations
+
+Recorded checks cover WordPress Coding Standards, PHP syntax, catalog boundaries, WordPress integration, HTTP scenarios, browser-driven COD checkout, image generation, advanced-rule safeguards, and controlled CDN slowdown/offline scenarios. See the [validation report](docs/VALIDATION.md) for exact results and limitations; that report is currently in Persian.
+
+These tests do not establish real-world speed gains on Iranian networks or compatibility with Iranian payment gateways, heavy custom themes, large catalogs, every cache plugin, or all supported WordPress/PHP versions. Direct end-to-end CDN downloads through WordPress's safe HTTP API were blocked by DNS restrictions in the development environment; fixture-backed download logic and actual local frontend delivery were tested separately.
+
+For development, use `./dev/install.sh` to prepare the disposable Docker environment and `./dev/test.sh` to run the local checks. Docker Compose, Python 3, Node.js, and Chromium are required. Tests create sample products and orders and must not run against a live store. Build the installable package with `python3 dev/package.py /tmp/fa-wp-speedup-0.2.0.zip`; the release workflow uses the same packaging allowlist.
+
+Further documentation: [architecture](docs/ARCHITECTURE.md), [images and advanced settings](docs/IMAGES-ADVANCED.md), and [file inventory](docs/FILES.md). These guides are currently in Persian. License: [GPL-2.0-or-later](LICENSE); third-party notices are in `licenses/`.
+
+## فارسی
+
 نسخهٔ آزمایشی **۰٫۲٫۰** برای تشخیص محلی، جایگزینی کنترل‌شدهٔ CDN، مشتق‌های تصویر و قواعد امن منابع. [راهنمای تصاویر و تنظیمات پیشرفته](docs/IMAGES-ADVANCED.md) شامل تولید WebP/AVIF، پیش‌نمایش، محدودیت‌ها و بازگشت است. کش صفحه یا پاک‌سازی دیتابیس ایجاد نمی‌شود. حذف منابع فقط با قواعد دقیق و رضایت مدیر ممکن است. هیچ ادعای بهبود سرعت عمومی یا سازگاری با درگاه ایرانی ندارد.
 
 ## نصب و استفادهٔ امن
