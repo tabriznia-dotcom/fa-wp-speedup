@@ -1,0 +1,373 @@
+# Copyright (C) 2026
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: FA WP Speedup 0.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/app\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-17T07:46:13+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: fa-wp-speedup\n"
+
+#. Plugin Name of the plugin
+#: fa-wp-speedup.php
+msgid "FA WP Speedup"
+msgstr ""
+
+#. Description of the plugin
+#: fa-wp-speedup.php
+msgid "تشخیص کارایی و میزبانی محلی منابع تأییدشده، با کنترل مدیر و بازگشت امن."
+msgstr ""
+
+#: fa-wp-speedup.php:35
+msgid "فعال‌سازی شبکه‌ای در نسخهٔ اولیه پشتیبانی نمی‌شود؛ افزونه را برای هر سایت جداگانه فعال کنید."
+msgstr ""
+
+#: includes/class-faws-advanced.php:306
+#: includes/class-faws-media.php:653
+#: includes/class-faws-plugin.php:329
+msgid "دسترسی مجاز نیست."
+msgstr ""
+
+#: includes/class-faws-advanced.php:344
+msgid "قواعد نامعتبر است؛ تنظیمات قبلی حفظ شد."
+msgstr ""
+
+#: includes/class-faws-advanced.php:376
+msgid "قواعد پیشرفتهٔ صفحه و پیشخوان"
+msgstr ""
+
+#: includes/class-faws-advanced.php:376
+msgid "حذف فایل یا defer ممکن است صفحه را مختل کند. ابتدا baseline و خرید آزمایشی را ثبت کنید و در حالت پیش‌نمایش نتیجه را ببینید. فقط handle محلی، مستقل و بدون inline/localization پذیرفته می‌شود. منابع حیاتی، وابستگی‌ها، مسیرهای حساس و درخواست نشست‌دار محافظت می‌شوند. ترکیب و تأخیر اجرایی اسکریپت وجود ندارد."
+msgstr ""
+
+#: includes/class-faws-advanced.php:377
+msgid "حالت پیش‌نمایش فقط برای مدیر با لینک nonceدار است و هدر عدم کش دارد. cache/proxy ناسازگار باید در staging بررسی شود. حالت عمومی با شناسایی افزونهٔ بهینه‌ساز دیگر متوقف می‌شود. خاموش‌کردن فوری یا بازگردانی تنظیمات، قواعد را برمی‌گرداند؛ HTML کش‌شده را از ابزار کش فعلی تخلیه کنید."
+msgstr ""
+
+#: includes/class-faws-advanced.php:383
+msgid "خاموش"
+msgstr ""
+
+#: includes/class-faws-advanced.php:384
+msgid "پیش‌نمایش مدیر"
+msgstr ""
+
+#: includes/class-faws-advanced.php:385
+msgid "اعمال عمومی پس از تأیید"
+msgstr ""
+
+#: includes/class-faws-advanced.php:389
+msgid "نام دقیق منبع (handle) را از گزارش کپی کنید، نوع صفحه و تغییر را انتخاب کنید. برای حذف یک قاعده نام آن را خالی کنید. پس از ذخیره، ردیف‌های خالی تازه تا سقف ۳۰ قاعده نمایش داده می‌شوند."
+msgstr ""
+
+#: includes/class-faws-advanced.php:390
+msgid "نام منبع"
+msgstr ""
+
+#: includes/class-faws-advanced.php:390
+#: includes/class-faws-advanced.php:414
+msgid "نوع"
+msgstr ""
+
+#: includes/class-faws-advanced.php:390
+#: includes/class-faws-advanced.php:415
+msgid "صفحه"
+msgstr ""
+
+#: includes/class-faws-advanced.php:390
+#: includes/class-faws-advanced.php:416
+msgid "تغییر"
+msgstr ""
+
+#: includes/class-faws-advanced.php:401
+msgid "خانه"
+msgstr ""
+
+#: includes/class-faws-advanced.php:402
+msgid "برگه"
+msgstr ""
+
+#: includes/class-faws-advanced.php:403
+msgid "نوشته"
+msgstr ""
+
+#: includes/class-faws-advanced.php:404
+msgid "فروشگاه"
+msgstr ""
+
+#: includes/class-faws-advanced.php:405
+msgid "محصول"
+msgstr ""
+
+#: includes/class-faws-advanced.php:406
+msgid "جست‌وجو"
+msgstr ""
+
+#: includes/class-faws-advanced.php:409
+msgid "حذف در این صفحه"
+msgstr ""
+
+#: includes/class-faws-advanced.php:410
+msgid "defer فقط JavaScript"
+msgstr ""
+
+#: includes/class-faws-advanced.php:420
+msgid "نام دقیق منبع"
+msgstr ""
+
+#: includes/class-faws-advanced.php:432
+msgid "baseline و سناریوی خرید را در staging ثبت کرده‌ام"
+msgstr ""
+
+#: includes/class-faws-advanced.php:433
+msgid "نتیجهٔ پیش‌نمایش را بررسی کرده‌ام و ریسک اعمال عمومی را تأیید می‌کنم"
+msgstr ""
+
+#: includes/class-faws-advanced.php:434
+msgid "حذف بارگذار emoji وردپرس فقط در صفحات عمومی مجاز؛ نمایش emoji به مرورگر سپرده می‌شود"
+msgstr ""
+
+#: includes/class-faws-advanced.php:435
+msgid "حذف فقط ابزارک اخبار وردپرس از پیشخوان مدیر؛ با خاموش‌کردن برمی‌گردد"
+msgstr ""
+
+#: includes/class-faws-advanced.php:436
+msgid "فاصلهٔ Heartbeat برابر ۶۰ ثانیه فقط در صفحهٔ اصلی پیشخوان؛ ویرایشگر و قفل نوشته تغییر نمی‌کنند"
+msgstr ""
+
+#: includes/class-faws-advanced.php:440
+msgid "ذخیرهٔ قواعد"
+msgstr ""
+
+#: includes/class-faws-advanced.php:443
+msgid "خاموش‌کردن فوری"
+msgstr ""
+
+#: includes/class-faws-advanced.php:444
+msgid "بازگردانی قواعد قبلی"
+msgstr ""
+
+#: includes/class-faws-advanced.php:459
+msgid "پیش‌نمایش: "
+msgstr ""
+
+#: includes/class-faws-advanced.php:461
+msgid "پیش‌نمایش صفحهٔ اصلی"
+msgstr ""
+
+#: includes/class-faws-advanced.php:461
+msgid "پیش‌نمایش پیشخوان"
+msgstr ""
+
+#: includes/class-faws-advanced.php:461
+msgid "برای صفحهٔ دیگر سایت، پارامتر faws_preview همین لینک را هنگام ورود مدیر به URL همان صفحه اضافه کنید؛ پارامتر را منتشر نکنید."
+msgstr ""
+
+#: includes/class-faws-media.php:672
+msgid "تولید زمان‌بندی نشد: فقط JPEG/PNG ثابت محلی، پشتیبانی کدک، سقف ۱۲ مگاپیکسل و ۱۶ مگابایت را بررسی کنید."
+msgstr ""
+
+#: includes/class-faws-media.php:676
+msgid "فعال‌سازی انجام نشد؛ فقط WebP کامل، کم‌حجم‌تر و سالم قابل فعال‌سازی است."
+msgstr ""
+
+#: includes/class-faws-media.php:708
+msgid "بهینه‌ساز تصویر دیگری فعال است؛ سرو WebP این ماژول متوقف می‌شود تا فقط یک لایه فعال باشد."
+msgstr ""
+
+#: includes/class-faws-media.php:710
+msgid "تصاویر و رسانه"
+msgstr ""
+
+#: includes/class-faws-media.php:710
+msgid "اصل تصاویر و متادیتای وردپرس حفظ می‌شوند. تولید، فعال‌سازی هر تصویر و کلید عمومی WebP جداگانه‌اند. فقط نسخه‌های کم‌حجم‌تر سرو می‌شوند؛ srcset و ابعاد حفظ می‌شوند. AVIF فقط برای بررسی تولید می‌شود. خاموش‌کردن کلید یا هر تصویر، منبع اصلی را برمی‌گرداند. پس از فعال‌سازی نسل تازه، دو نسل حفظ می‌شود؛ پیش از فعال‌سازی یا حذف، کش HTML/CDN سایت را تخلیه کنید."
+msgstr ""
+
+#: includes/class-faws-media.php:717
+msgid "سرو WebP تأییدشده برای تصاویر عمومی؛ با خاموش‌کردن به اصل برگردید"
+msgstr ""
+
+#: includes/class-faws-media.php:718
+msgid "تکمیل width و height از اندازهٔ واقعی وردپرس، فقط در صورت نبودن"
+msgstr ""
+
+#: includes/class-faws-media.php:719
+msgid "eager و fetchpriority بالا فقط برای اولین تصویر شاخص صفحهٔ تکی؛ در قالب سفارشی ابتدا محل تصویر را بررسی کنید"
+msgstr ""
+
+#: includes/class-faws-media.php:720
+msgid "اندازه‌گیری تصویر با مرورگر هنگام بازدید مدیر؛ ارسال فقط ID و ابعاد به همین سایت، حداکثر یک بار در دقیقه"
+msgstr ""
+
+#: includes/class-faws-media.php:724
+msgid "ذخیرهٔ تنظیمات تصویر"
+msgstr ""
+
+#: includes/class-faws-media.php:727
+msgid "بازگردانی تنظیمات قبلی تصاویر"
+msgstr ""
+
+#: includes/class-faws-media.php:753
+msgid "معتبر"
+msgstr ""
+
+#: includes/class-faws-media.php:753
+msgid "منبع تغییر کرده یا نسخهٔ محلی ناسالم است؛ اصل تصویر استفاده می‌شود"
+msgstr ""
+
+#: includes/class-faws-media.php:761
+msgid "کیفیت (۶۰ تا ۹۰)"
+msgstr ""
+
+#: includes/class-faws-media.php:762
+msgid "تأیید تولید پس‌زمینه با حفظ اصل"
+msgstr ""
+
+#: includes/class-faws-media.php:765
+msgid "تأیید فعال‌سازی WebP کامل‌شده"
+msgstr ""
+
+#: includes/class-faws-media.php:766
+msgid "بازگشت به اصل و لغو کار زمان‌بندی‌شده"
+msgstr ""
+
+#: includes/class-faws-media.php:767
+msgid "حذف فقط نسخه‌های تولیدشده"
+msgstr ""
+
+#: includes/class-faws-media.php:779
+msgid "آخرین اندازه‌گیری مرورگر مدیر"
+msgstr ""
+
+#: includes/class-faws-plugin.php:319
+msgid "شتاب وردپرس"
+msgstr ""
+
+#: includes/class-faws-plugin.php:400
+msgid "شتاب وردپرس — نسخهٔ آزمایشی ۰٫۲"
+msgstr ""
+
+#: includes/class-faws-plugin.php:401
+msgid "تشخیص فقط برای مدیر فعال می‌شود. تصویر و قواعد منابع فقط با انتخاب شما تغییر می‌کنند؛ cron سایت، کش صفحه و دادهٔ فروشگاه تغییر نمی‌کنند و آمار به بیرون ارسال نمی‌شود."
+msgstr ""
+
+#: includes/class-faws-plugin.php:404
+#: includes/class-faws-plugin.php:456
+msgid "گزارش"
+msgstr ""
+
+#: includes/class-faws-plugin.php:405
+msgid "منابع خارجی"
+msgstr ""
+
+#: includes/class-faws-plugin.php:406
+#: includes/class-faws-plugin.php:460
+msgid "فرانت‌اند"
+msgstr ""
+
+#: includes/class-faws-plugin.php:407
+msgid "تصاویر"
+msgstr ""
+
+#: includes/class-faws-plugin.php:408
+msgid "قواعد پیشرفته"
+msgstr ""
+
+#: includes/class-faws-plugin.php:409
+#: includes/class-faws-plugin.php:461
+msgid "ووکامرس"
+msgstr ""
+
+#: includes/class-faws-plugin.php:410
+msgid "پیشخوان"
+msgstr ""
+
+#: includes/class-faws-plugin.php:411
+msgid "پیشرفته"
+msgstr ""
+
+#: includes/class-faws-plugin.php:415
+msgid "تنظیمات و بازگشت"
+msgstr ""
+
+#: includes/class-faws-plugin.php:419
+msgid "ثبت تشخیص هنگام بازدید مدیر (۲۰ گزارش آخر؛ خاموش‌کردن ثبت را متوقف می‌کند)"
+msgstr ""
+
+#: includes/class-faws-plugin.php:420
+msgid "اجازهٔ جایگزینی منابع تأییدشده برای مهمان در صفحات عمومی؛ برای بازگشت خاموش کنید"
+msgstr ""
+
+#: includes/class-faws-plugin.php:421
+msgid "پاک‌کردن داده‌ها و فایل‌های محلی هنگام حذف افزونه؛ غیرقابل‌بازگشت"
+msgstr ""
+
+#: includes/class-faws-plugin.php:426
+msgid "ذخیره"
+msgstr ""
+
+#: includes/class-faws-plugin.php:428
+msgid "بازگردانی تنظیمات قبلی"
+msgstr ""
+
+#: includes/class-faws-plugin.php:429
+msgid "پاک‌کردن گزارش‌ها"
+msgstr ""
+
+#: includes/class-faws-plugin.php:430
+msgid "منابع خارجی و پیش‌نمایش"
+msgstr ""
+
+#: includes/class-faws-plugin.php:430
+msgid "دریافت فقط پس از رضایت مدیر، در WP-Cron و حداکثر هر ساعت انجام می‌شود. سپس فعال‌سازی جداگانه لازم است. زمان سنجش از سرور است و نمایندهٔ شبکهٔ کاربران ایران نیست. آستانهٔ کندی این نمونه ۱۵۰۰ میلی‌ثانیه است؛ timeout به‌تنهایی مجوز جایگزینی نیست."
+msgstr ""
+
+#: includes/class-faws-plugin.php:439
+msgid "مسیر uploads در دسترس نیست."
+msgstr ""
+
+#: includes/class-faws-plugin.php:441
+msgid "منشأ checksum"
+msgstr ""
+
+#: includes/class-faws-plugin.php:450
+msgid "تأیید مجوز و زمان‌بندی دریافت"
+msgstr ""
+
+#: includes/class-faws-plugin.php:451
+msgid "تأیید فعال‌سازی فایل بررسی‌شده"
+msgstr ""
+
+#: includes/class-faws-plugin.php:452
+msgid "بازگشت به منبع اصلی"
+msgstr ""
+
+#: includes/class-faws-plugin.php:453
+msgid "لغو رضایت و حذف فایل محلی"
+msgstr ""
+
+#: includes/class-faws-plugin.php:456
+msgid "زمان PHP با TTFB مرورگر متفاوت است. زمان query، شبکه و cache hit بدون ابزار اندازه‌گیری گزارش نمی‌شود. URL ناشناخته و اطلاعات نشست ذخیره نمی‌شوند."
+msgstr ""
+
+#: includes/class-faws-plugin.php:460
+msgid "منابع HTML فقط شناسایی می‌شوند. فونت و CSS دارای وابستگی بیرونی پشتیبانی نمی‌شوند. تنظیمات تصویر و قواعد منابع در بخش‌های جداگانه و پیش‌فرض خاموش هستند. lazy-load استاندارد وردپرس حفظ می‌شود. برای جلوگیری از کتابخانهٔ تکراری، پیش از تأیید فهرست handleها را بررسی کنید."
+msgstr ""
+
+#: includes/class-faws-plugin.php:461
+msgid "سبد، پرداخت، حساب، کاربران واردشده، درخواست‌های دارای query و نشست از جایگزینی مستثنا هستند. دادهٔ قیمت، موجودی و سفارش تغییر نمی‌کند. آزمون محلی HPOS و پرداخت COD انجام شده است؛ درگاه بانکی و سازگاری قالب واقعی نیازمند تست مستقل است."
+msgstr ""
+
+#: includes/class-faws-plugin.php:462
+msgid "پیشخوان و صف"
+msgstr ""
+
+#: includes/class-faws-plugin.php:462
+msgid "درخواست‌های افزونه‌های دیگر مسدود نمی‌شوند. cron و Action Scheduler فقط مشاهده می‌شوند؛ هیچ کار یا داده‌ای پاک یا retry نمی‌شود."
+msgstr ""

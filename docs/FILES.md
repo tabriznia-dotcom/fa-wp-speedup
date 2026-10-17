@@ -1,0 +1,44 @@
+# فایل‌های تغییرکرده
+
+مخزن اولیه فقط README داشت. فایل‌های زیر مربوط به نسخه‌های ۰٫۱ و ۰٫۲ هستند؛ dependencyهای ignored و اطلاعات محرمانه در این فهرست نیستند. قابلیت‌های این مرحله در `includes/class-faws-media.php`، `includes/class-faws-advanced.php` و `assets/media-audit.js` قرار دارند.
+
+- `.gitignore`
+- `LICENSE`
+- `README.md`
+- `assets/media-audit.js`
+- `composer.json`
+- `composer.lock`
+- `dev/compose.yaml`
+- `dev/composer.sh`
+- `dev/install.sh`
+- `dev/package.py`
+- `dev/start.sh`
+- `dev/test.sh`
+- `dev/wp.sh`
+- `docs/ARCHITECTURE.md`
+- `docs/FILES.md`
+- `docs/IMAGES-ADVANCED.md`
+- `docs/VALIDATION.md`
+- `fa-wp-speedup.php`
+- `includes/class-faws-advanced.php`
+- `includes/class-faws-catalog.php`
+- `includes/class-faws-local.php`
+- `includes/class-faws-media.php`
+- `includes/class-faws-plugin.php`
+- `languages/fa-wp-speedup.pot`
+- `licenses/bootstrap-MIT.txt`
+- `licenses/popper-MIT.txt`
+- `package-lock.json`
+- `package.json`
+- `phpcs.xml.dist`
+- `tests/advanced-fixture.php`
+- `tests/browser.mjs`
+- `tests/catalog.php`
+- `tests/cdn-browser.mjs`
+- `tests/cdn-fixture.php`
+- `tests/http-smoke.py`
+- `tests/integration.php`
+- `tests/media-advanced-browser.mjs`
+- `tests/media-advanced.php`
+- `tests/woo-fixtures.php`
+- `uninstall.php`
