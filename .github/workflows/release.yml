@@ -53,6 +53,7 @@ jobs:
           import os
           import re
           import sys
+          import subprocess
           import zipfile
           from pathlib import Path
 
@@ -71,39 +72,14 @@ jobs:
           if match.group(1).strip() != version:
               sys.exit(f"ERROR: Plugin Version {match.group(1).strip()!r} does not match release {version!r}.")
 
-          excluded_dirs = {
-              ".git", ".github", ".idea", ".vscode", ".venv", "__pycache__",
-              "node_modules", "tests", "test", "docs", "dist", "build", "coverage",
-          }
-          excluded_names = {".gitignore", ".gitattributes", ".editorconfig", ".DS_Store"}
-          out_dir = root / "dist"
-          out_dir.mkdir(exist_ok=True)
-          output = out_dir / f"{slug}-{version}.zip"
-          members = []
-
-          with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as bundle:
-              for path in sorted(root.rglob("*")):
-                  relative = path.relative_to(root)
-                  if any(part in excluded_dirs for part in relative.parts):
-                      continue
-                  if relative.name in excluded_names or path.suffix.lower() == ".zip":
-                      continue
-                  if relative == Path("README.md"):
-                      continue
-                  if path.is_symlink():
-                      sys.exit(f"ERROR: Symbolic links are not allowed in the installation package: {relative}")
-                  if not path.is_file():
-                      continue
-                  archive_name = f"{slug}/{relative.as_posix()}"
-                  bundle.write(path, archive_name)
-                  members.append(archive_name)
-
-          if f"{slug}/{slug}.php" not in members:
-              sys.exit("ERROR: Main plugin file is missing from archive.")
+          output = root / "dist" / f"{slug}-{version}.zip"
+          subprocess.run([sys.executable, str(root / "dev" / "package.py"), str(output)], check=True)
           with zipfile.ZipFile(output) as bundle:
+              if f"{slug}/{slug}.php" not in bundle.namelist():
+                  sys.exit("ERROR: Main plugin file is missing from archive.")
               if bundle.testzip() is not None:
                   sys.exit("ERROR: ZIP integrity check failed.")
-          print(f"Created {output.name} with {len(members)} files.")
+              print(f"Created {output.name} with {len(bundle.namelist())} files.")
           PY
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "zip=dist/fa-wp-speedup-${TAG#v}.zip" >> "$GITHUB_OUTPUT"
